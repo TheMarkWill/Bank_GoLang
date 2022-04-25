@@ -1,6 +1,7 @@
 package accounts
 
 import (
+	"fmt"
 	"time"
 
 	"bank/clients"
@@ -93,6 +94,14 @@ func (c *CheckingAccount) GetAmount() float64 {
 
 func (c *CheckingAccount) GetHistory() []History {
 	return c.History
+}
+
+func (c *CheckingAccount) PrintHistory() {
+	for _, event := range c.History {
+		fmt.Println(event.dateAt.Format("02-01-2006"), ":", event.description)
+		fmt.Println(string(event.eventType), "-", event.amount)
+		fmt.Println()
+	}
 }
 
 func (c *CheckingAccount) createEvent(event History) History {

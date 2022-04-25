@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"bank/accounts"
 	"bank/clients"
 )
@@ -27,6 +25,8 @@ func main() {
 
 	PayBillet(&accountSilvia, 25)
 
-	fmt.Println(accountSilvia.GetAmount())
-	fmt.Println(accountSilvia.GetHistory())
+	// fmt.Println(accountSilvia.GetAmount())
+	// fmt.Println(accountSilvia.GetHistory())
+
+	accountSilvia.PrintHistory()
 }
